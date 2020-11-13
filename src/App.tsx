@@ -1,15 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
+import * as React from 'react';
 import './App.css';
+import { Coffeemug } from './components/ecosystem-coffeemug';
+import { createTheme, TextField } from '@fluentui/react';
+import { ThemeProvider } from "@fluentui/react-theme-provider"
 
 function App() {
+  const [primary, setPrimary] = React.useState("#0078d4")
+  const theme = createTheme({
+    palette: {
+      themePrimary: primary,
+    }
+  });
+  
   return (
+    <span>
+      <div>
+        <TextField value={primary} onChange={(_, v) => setPrimary(v || "")} label="Primary color" />
+      </div>
+   <ThemeProvider theme={theme}>
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
+        <Coffeemug />
         <a
           className="App-link"
           href="https://reactjs.org"
@@ -19,7 +30,9 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
+        </div>
+        </ThemeProvider>
+      </span>
   );
 }
 
