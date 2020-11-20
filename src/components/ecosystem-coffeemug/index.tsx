@@ -2,14 +2,23 @@ import * as React from "react";
 import { Button, mergeStyles, PrimaryButton } from "@fluentui/react";
 import { useTheme } from "@fluentui/react-theme-provider"
 
+/**
+ * This is the props interface
+ */
 export interface Props {
   label: string;
 }
 
+/**
+ * These are the default props
+ */
 const defaultProps: Props = {
   label: "Looks like somebody has a case of the Mondays!",
 };
 
+/**
+ * This is the actual component.
+ */
 export const Coffeemug: React.FC<Partial<Props>> = (props: Partial<Props>) => {
   const theme = useTheme();
   const resolvedProps = { ...defaultProps, ...props };

@@ -1,10 +1,9 @@
 import * as React from 'react';
-import './App.css';
 import { Coffeemug } from './components/ecosystem-coffeemug';
 import { createTheme, TextField } from '@fluentui/react';
 import { ThemeProvider } from "@fluentui/react-theme-provider"
 
-function App() {
+export const App = () => {
   const [primary, setPrimary] = React.useState("#0078d4")
   const theme = createTheme({
     palette: {
@@ -35,5 +34,3 @@ function App() {
       </span>
   );
 }
-
-export default App;
