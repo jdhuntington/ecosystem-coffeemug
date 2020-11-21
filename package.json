@@ -44,6 +44,7 @@
   "scripts": {
     "build": "react-scripts build",
     "eject": "react-scripts eject",
+    "mega": "tsc --outFile 'dist/mega/index.js' --isolatedModules false --module amd --noEmit false",
     "start": "react-scripts start",
     "test": "react-scripts test"
   },
